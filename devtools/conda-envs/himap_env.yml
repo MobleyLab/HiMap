@@ -19,5 +19,5 @@ dependencies:
   - r-ggpubr
   - kneed
   - pip:
-    - git+https://github.com/MobleyLab/HiMap.git@cc0956948a41523ed6070e7bcee22ed0d917c74aaf
+    - git+https://github.com/MobleyLab/HiMap.git@cc73754769c45c4d47e178b2e7b6f2207be854e016
  

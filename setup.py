@@ -1,7 +1,7 @@
 """
-Setup script for Lomap2
+Setup script for HiMap
 
-You can install lomap with
+You can install himap with
 
 python setup.py install
 """
@@ -18,16 +18,17 @@ if sys.argv[-1] == 'setup.py':
 
 
 descr = """
-The Lead Optimization Mapper (LOMAP) is an automated algorithm
+High Information Mapper (HiMap), successor of the Lead 
+Optimization Mapper (LOMAP) is an automated algorithm
 to plan efficient relative free energy calculations between
 potential ligands within a substantial of compounds'
 """
 
 setup(
-    name                 = 'lomap',
+    name                 = 'himap',
     version              = versioneer.get_version(),
     cmdclass             = versioneer.get_cmdclass(),
-    description          = 'Lead Optimization Mapper 2',
+    description          = 'High Information Mapper',
     long_description     = descr,
     classifiers=[
             'Development Status :: 3 - Alpha',
@@ -43,11 +44,11 @@ setup(
             'Topic :: Scientific/Engineering :: Physics'
     ],
     keywords=[ 'alchemical free energy setup', 'perturbation network' ],
-    url                  = 'https://github.com/MobleyLab/Lomap',
-    author               = 'Gaetano Calabro and David Mobley',
-    maintainer           = 'Antonia Mey and David Mobley',
-    author_email         = 'gcalabro -at- uci.edu',
-    license              = 'MIT',
+    url                  = 'https://github.com/MobleyLab/HiMap',
+    author               = 'Mary Pitman, Gaetano Calabro, David Mobley',
+    maintainer           = 'Mary Pitman and David Mobley',
+    author_email         = 'mpitman -at- uci.edu',
+    license              = 'GNU 3.0',
     platforms            = ['Linux-64', 'Mac OSX-64', 'Unix-64'],
     packages             = find_packages()+['test'],
     include_package_data = True,

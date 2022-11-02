@@ -39,16 +39,17 @@ Requirements
 Authors
 -------
 
-Contact for the graph optimization features within this fork:
+Contact for HiMap:
 * Mary Pitman <mpitman@uci.edu>
 * David Mobley <dmobley@uci.edu>
     
-Predecessor authors:  
+Predecessor authors of LOMAP:  
 * Gaetano Calabro' <gcalabro@uci.edu>
 * Mark Mackey
 * Lester Hedges
 * Antonia S J S Mey
 * Jenke Scheen
+* David Mobley
 
 Installation
 -----

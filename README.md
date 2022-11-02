@@ -83,6 +83,8 @@ lomap test/basic/
 #### If you would rather use the API directly:
 * To generate optimal designs, try:
 
+cd examples/
+
 ```python
 import lomap
 import himap

@@ -1,0 +1,37 @@
+*********
+CHANGELOG
+*********
+
+O-LOMAP
+=====
+- Added feature to doing clustering of ligand series in clustering.py
+- Created utils.py for graph optimization needs
+- Added python graph optimization controls in optimal.py
+- Added R Statistical enging for graph optimization in optimal_design.R	
+- Edited __init__.py to handle imports of optimization modules
+
+
+2.0.0
+=====
+- Breaking changes: replaced usage of argparse.Namespace as input to class inits (e.g. MCS) in favour of dicts.
+- Renamed various dunderscore variables to single underscore
+- Fixed bug in explicit hydrogen atom mappings
+- Rewrote tests in pytest, using fixtures to iterate over cases
+- Added regression tests for MCS class
+
+
+1.0.0
+=====
+
+- added versioning
+- support for python 3.5 and networkx2
+- improved visualisation of output networks
+- better enforcement of PEP8 style python
+- no longer support for python 2.7
+
+0.0.x
+=====
+
+Internal Alpha version
+----------------------
+- Basic functionality of preparing a Perturbation map for alchemical free energy calculations

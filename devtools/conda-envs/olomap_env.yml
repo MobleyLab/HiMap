@@ -1,0 +1,23 @@
+name: olomap
+channels:
+  - conda-forge
+  - omnia
+  - defaults
+dependencies:
+  - numpy
+  - scipy
+  - matplotlib
+  - rdkit
+  - networkx
+  - pygraphviz
+  - rpy2
+  - python-igraph
+  - r-tidyverse
+  - r-igraph
+  - r-reshape2
+  - r-cowplot
+  - r-ggpubr
+  - kneed
+  - pip:
+    - git+https://github.com/OpenFreeEnergy/Lomap.git@cc1188961d44983078a9f0fc83db2bbbb2f5cc37
+ 

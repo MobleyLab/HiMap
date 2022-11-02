@@ -2,7 +2,7 @@
 CHANGELOG
 *********
 
-O-LOMAP
+HiMap
 =====
 - Added feature to doing clustering of ligand series in clustering.py
 - Created utils.py for graph optimization needs

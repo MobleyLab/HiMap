@@ -1,4 +1,4 @@
-import lomap
+import himap
 
 """
 This example file walks through how to read in scores such as similarity and
@@ -21,7 +21,7 @@ IDs_in = '../test/optimize/mol_names.txt'
 # Read files, clean any potential NaN scores.
 #   Added optional parameter:
 #             delimiter: default is ','
-n_arr, ID_list = lomap.read_data(sim_scores_in, IDs = IDs_in)
+n_arr, ID_list = himap.read_data(sim_scores_in, IDs = IDs_in)
 
 #-------------------------------------------------------#
 # Clustering.
@@ -29,7 +29,7 @@ n_arr, ID_list = lomap.read_data(sim_scores_in, IDs = IDs_in)
 # Perform clustering.
 #   sub_arr, sub_ID:   the n_arr and ID_list subdivided by clusters
 #   selected_clusters: user selected clusters during interaction.
-sub_arr, sub_ID, selected_clusters = lomap.cluster_interactive(n_arr, ID_list)
+sub_arr, sub_ID, selected_clusters = himap.cluster_interactive(n_arr, ID_list)
 
 #-------------------------------------------------------#
 # Optimization.
@@ -39,6 +39,6 @@ ref_ligs = ['mol_0', 'mol_1', 'mol_2', 'mol_3', 'mol_4']
 
 # Send the user selected clusters for optimization.
 # Send the user selected clusters for optimization.
-lomap.clusters2optimize(sub_arr, sub_ID, clusters2optim = selected_clusters,
+himap.clusters2optimize(sub_arr, sub_ID, clusters2optim = selected_clusters,
                         ref_ligs=ref_ligs, num_edges = '2n', optim_types = ['A', 'D']
                        )

@@ -85,6 +85,7 @@ lomap test/basic/
 
 ```python
 import lomap
+import himap
 
 #-------------------------------------------------------#
 # Generate similarity scores.
@@ -99,13 +100,13 @@ strict, loose = db_mol.build_matrices()
 sim_np = strict.to_numpy_2D_array()
 
 # Clean data if Lomap produces rare error. If score is NaN, replace with 0.0
-n_arr = lomap.clean_NaN(sim_np)
+n_arr = himap.clean_NaN(sim_np)
 
 #-------------------------------------------------------#
 # Clustering.
 #-------------------------------------------------------#
 # Create ID_list from db_mol prior to clustering.
-ID_list = lomap.db_mol_IDs(db_mol, n_arr)
+ID_list = himap.db_mol_IDs(db_mol, n_arr)
 
 # Perform clustering.
 #   sub_arr, sub_ID:   the n_arr and ID_list subdivided by clusters
@@ -119,14 +120,14 @@ sub_arr, sub_ID, selected_clusters = lomap.cluster_interactive(n_arr, ID_list)
 ref_ligs = ['ejm_31']
 
 # Send the user selected clusters for optimization.
-lomap.clusters2optimize(sub_arr, sub_ID, clusters2optim = selected_clusters, ref_ligs=ref_ligs)
+himap.clusters2optimize(sub_arr, sub_ID, clusters2optim = selected_clusters, ref_ligs=ref_ligs)
 ```
 
 
 * To generate optimal designs using external scores or weights, try:
 
 ```python
-import lomap
+import himap
 
 #-------------------------------------------------------#
 # Define input files, read data.
@@ -138,7 +139,7 @@ IDs_in = '../test/optimize/mol_names.txt'
 # Read files, clean any potential NaN scores.
 #   Added optional parameter:
 #             delimiter: default is ','
-n_arr, ID_list = lomap.read_data(sim_scores_in, IDs = IDs_in)
+n_arr, ID_list = himap.read_data(sim_scores_in, IDs = IDs_in)
 
 #-------------------------------------------------------#
 # Clustering.
@@ -146,7 +147,7 @@ n_arr, ID_list = lomap.read_data(sim_scores_in, IDs = IDs_in)
 # Perform clustering.
 #   sub_arr, sub_ID:   the n_arr and ID_list subdivided by clusters
 #   selected_clusters: user selected clusters during interaction.
-sub_arr, sub_ID, selected_clusters = lomap.cluster_interactive(n_arr, ID_list)
+sub_arr, sub_ID, selected_clusters = himap.cluster_interactive(n_arr, ID_list)
 
 #-------------------------------------------------------#
 # Optimization.
@@ -155,7 +156,7 @@ sub_arr, sub_ID, selected_clusters = lomap.cluster_interactive(n_arr, ID_list)
 ref_ligs = ['mol_0', 'mol_1', 'mol_2', 'mol_3', 'mol_4']
 
 # Send the user selected clusters for optimization.
-lomap.clusters2optimize(sub_arr, sub_ID, clusters2optim = selected_clusters,
+himap.clusters2optimize(sub_arr, sub_ID, clusters2optim = selected_clusters,
                         ref_ligs=ref_ligs, num_edges = '2n', optim_types = ['A', 'D']
                         )
 ```

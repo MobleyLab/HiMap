@@ -4,6 +4,10 @@
 ##      - computes the optimal designs with and without weighting,
 ##      - and outputs the optimal designs.
 ###################################################################
+# This script it adapted by M Pitman from  https://doi.org/10.1002/jcc.26095
+# The original publication is:
+# Yang Q, Burchett W, Steeno GS, Liu S, Yang M, Mobley DL, Hou X.
+# J. Comput. Chem. 2020 jan; 41(3):247–257.
 
 ###################################################################
 ## Load packages, set ggplot theme, and import data

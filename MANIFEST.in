@@ -6,4 +6,5 @@ include LICENCE.txt
 include examples/example.py
 include versioneer.py
 include lomap/_version.py
-include lomap/*R
+include himap/*R
+include himap/*

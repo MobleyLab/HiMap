@@ -55,7 +55,7 @@ Installation
 
 To install HiMap with LOMAP included, build the conda environment and install from file:
 
-https://github.com/pitmanme/HiMap/blob/main/devtools/conda-envs/himap_env.yml
+https://github.com/MobleyLab/HiMap/tree/main/devtools/conda-envs/himap_env.yml
 
 with:
 

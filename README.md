@@ -1,4 +1,3 @@
-[![CI](https://github.com/OpenFreeEnergy/Lomap/actions/workflows/CI.yaml/badge.svg)](https://github.com/OpenFreeEnergy/Lomap/actions/workflows/CI.yaml)
 ## Contents of this file
 
  * HiMap Introduction

@@ -433,7 +433,7 @@ def plt_cluster_regions(labels, ID_list, **kwargs):
     # Clean ID list if needed, func in utils.
     himap.clean_ID_list(ID_list)
     N = len(ID_list)
-    print(f'N is {N}')
+    print(f'The number of ligands is {N}')
     # Define optional arugments
     # Plot coloring
     cmap = kwargs.get('cmap', 'inferno')

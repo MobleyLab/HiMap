@@ -53,7 +53,7 @@ Predecessor authors:
 Installation
 -----
 
-For optimal lomap methods, build the conda environment and install Lomap from file:
+To install HiMap with LOMAP included, build the conda environment and install from file:
 
 https://github.com/pitmanme/HiMap/blob/main/devtools/conda-envs/himap_env.yml
 

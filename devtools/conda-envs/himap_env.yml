@@ -1,4 +1,4 @@
-name: olomap
+name: himap
 channels:
   - conda-forge
   - omnia

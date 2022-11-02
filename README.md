@@ -111,7 +111,7 @@ ID_list = himap.db_mol_IDs(db_mol, n_arr)
 # Perform clustering.
 #   sub_arr, sub_ID:   the n_arr and ID_list subdivided by clusters
 #   selected_clusters: user selected clusters during interaction.
-sub_arr, sub_ID, selected_clusters = lomap.cluster_interactive(n_arr, ID_list)
+sub_arr, sub_ID, selected_clusters = himap.cluster_interactive(n_arr, ID_list)
 
 #-------------------------------------------------------#
 # Optimization.

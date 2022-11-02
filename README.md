@@ -55,17 +55,17 @@ Installation
 
 For optimal lomap methods, build the conda environment and install Lomap from file:
 
-https://github.com/pitmanme/HiMap/blob/main/devtools/conda-envs/olomap_env.yml
+https://github.com/pitmanme/HiMap/blob/main/devtools/conda-envs/himap_env.yml
 
 with:
 
-`conda env create -f olomap_env.yml python=3.8`
+`conda env create -f himap_env.yml python=3.8`
 
 
 Usage
 -----
 #### Example scripts are included for various purposes:
-* To run LOMAP with optimization \
+* To run HiMap with optimization \
     `python examples/example_optimize.py`
 * To read in scores and optimize \
     `python examples/example_optimize_read_data.py`

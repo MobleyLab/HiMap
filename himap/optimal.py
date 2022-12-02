@@ -22,18 +22,8 @@ RBFE calculations.
 # *****************************************************************************
 # This module was written by Dr. Mary Pitman. 2022
 #
-# This library is free software; you can redistribute it and/or
-# modify it under the terms of the GNU Lesser General Public
-# License as published by the Free Software Foundation; either
-# version 2.1 of the License, or (at your option) any later version.
-#
-# This library is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
-# Lesser General Public License for more details.
-#
-# You should have received a copy of the GNU Lesser General Public
-# License along with this library; if not, see http://www.gnu.org/licenses/
+# You should have received a copy of the MIT License along with 
+# this library
 # *****************************************************************************
 
 
@@ -132,11 +122,8 @@ def py_run_optimization(*args):
     '''
     # Get the directory of this script
     optim_dir = os.path.dirname(os.path.realpath(__file__))
-    # Does this source other optimal_design.R if I am in a dif folder? 
     r = robjects.r
-    # Need to find the R script and put it in. Don't know why this happened
     r.source('{}/optimal_design.R'.format(optim_dir))
-    #r.source('optimal_design_backup.R')
     if args:
         out=r.run_optimization(*args)
     else:

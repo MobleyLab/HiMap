@@ -1,11 +1,12 @@
 ## Contents of this file
 
- * HiMap Introduction
- * Requirements
- * Authors
- * Installation
- * Usage
- * Troubleshooting
+ * [HiMap Introduction](https://github.com/MobleyLab/HiMap#himap-introduction)
+ * [Authors](https://github.com/MobleyLab/HiMap#authors)
+ * [Installation](https://github.com/MobleyLab/HiMap#installation)
+ * [Usage](https://github.com/MobleyLab/HiMap#usage)
+ * [Requirements](https://github.com/MobleyLab/HiMap#requirements)
+ * [Troubleshooting](https://github.com/MobleyLab/HiMap#troubleshooting)
+
 
 HiMap Introduction
 -------
@@ -21,18 +22,6 @@ free energy calculations between potential ligands. LOMAP was further
 developed to be based on free, open-source APIs such as RDKit. HiMap
 now includes clustering of ligand series, and optimization of free
 energy perturbation networks. 
-
-Requirements
--------
-* RDKit Release > 2021
-* NetworkX
-* Matplotlib 
-* python >= 3.8
-* R
-* rpy2=3.4.5
-* kneed=0.7.0
-* scikit-learn=0.23.2
-* scipy
 
 
 Authors
@@ -212,7 +201,26 @@ strict, loose = db_mol.build_matrices()
 nx_graph = db_mol.build_graph() 
 ```
 
+Requirements
+-------
+* RDKit Release > 2021
+* NetworkX
+* Matplotlib 
+* python >= 3.8
+* R
+* rpy2=3.4.5
+* kneed=0.7.0
+* scikit-learn=0.23.2
+* scipy
+
 Troubleshooting
 -----
-* Why is optimization not finding a random seed design? \
-Check that similarity scores are not zero, nearly zero, or in large part near zero. If the similarity scores are non-zero but very dissimilar, try decreasing the neighbor distance cutoff value (epsilon) selected during clustering. If the similarity scores are zero or near zero, this may be an example of a rare limitation, currently in development, in the LOMAP similarity scores. Check that the ligands are indeed very dissimilar. If they are not, consider using an alternate similarity metric for the time being.
+Why is optimization not finding a random seed design? 
+
+1. Check that similarity scores are not zero, nearly zero, or in large part near zero:
+
+    * If the similarity scores are non-zero but very dissimilar, try decreasing the neighbor distance cutoff value (epsilon) selected during clustering. 
+    * If the similarity scores are zero or near zero, verify if relative binding free energy calculations or relative alchemical transformations should be run for this set. 
+    * Alternatively, if the ligands are chemically similar but break the rules for similarity in LOMAP, consider using another similarity metric. For example, ring breaking results in a score of zero with the LOMAP version included here. If your transformation method performs ring breaking well, use another similarity score or refine the scoring in LOMAP. 
+
+2. For designs with about 40 ligands and more, an edge count near the number of ligands may be too sparse for a weighted random invertible matrix to be found for your set of ligands. Increase the edge count. The coming version of HiMap will improve upon this feature. 

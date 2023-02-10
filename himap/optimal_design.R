@@ -114,6 +114,54 @@ Fedorov.exchange <- function( A.use, W.use, starting.rows, criterion, maxiter = 
           print("Invertible solution found.")
           break
         }
+      }else if( rand.iter > 1000){
+        # Find a non-random connected seed design.
+        # If it has taken too many iterations to find a random seed design,
+        # make a radial design and add the number of edges needed from highest
+        # weights available.
+        reference.row <- c(which( rowSums( abs( A.use)) == 1))
+        # If there is more than one reference ligand, use the first one.
+        if (length(reference.row) > 1) {
+           reference.row <- reference.row[1]
+        }
+        reference.col <- c(which( A.use[,c(which(A.use[reference.row,] == 1))] != 0))
+        # Get the rows of A that are nonzero in the column of reference.col.
+        radial.rows <- reference.col[reference.col != reference.row]
+
+        # Get extra rows to add if needed:
+        if (length(radial.rows) < n.pairs) { #Find highest weight edges to add.       
+          n_nodes <- ncol(A.use)
+          edges.needed <- n.pairs - n_nodes + 1
+
+          # Find the heightest weight rows of W, excluding radial.rows
+          W.considered <- W.use[-c(reference.row, radial.rows), -c(reference.row, radial.rows)]
+          
+          # Get the row numbers from W.use
+          all.cols <- c(1:ncol(W.use))
+          exclude.cols <- c(reference.row, radial.rows)
+          remaining.cols <- all.cols[!(all.cols %in% exclude.cols)]
+
+          # Find the indexes of highest values of W.considered.
+          top.edges.ix <- head( sort(W.considered, decreasing = TRUE, index.return = TRUE)$ix , n = edges.needed)
+
+          # Convert index to column or row.
+          top.cols <- top.edges.ix - floor(top.edges.ix / ncol(W.considered))*ncol(W.considered)
+          top.cols <- replace(top.cols, top.cols==0, ncol(W.considered))
+
+          # top.cols is the index of entries in remaining.cols.
+          top.W.cols = c()
+          for (i in top.cols) {
+            new_element <- remaining.cols[i]
+            top.W.cols[length(top.W.cols) + 1] <- new_element
+          }
+          current.rows <- sort(c(radial.rows, reference.row, top.W.cols))
+          print("Generated seed design from radial map and high weight edges.")
+          break
+        }else{ #output star graph (radial).
+          current.rows <- sort(c(radial.rows, reference.row))
+          print("Generated seed design from radial map.")
+          break
+        } # End of new.
       }
     }
     return(

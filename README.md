@@ -48,7 +48,7 @@ https://github.com/MobleyLab/HiMap/tree/main/devtools/conda-envs/himap_env.yml
 
 with:
 
-`conda env create -f himap_env.yml python=3.8`
+`conda env create -f himap_env.yml`
 
 
 Usage

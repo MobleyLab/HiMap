@@ -1,4 +1,4 @@
-name: himap_env6
+name: himap_env
 channels:
   - conda-forge
   - omnia
